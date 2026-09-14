@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Host | RVCE CSE Agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">RVCE • DEPARTMENT OF CSE</span>
+      <h1>AI <span>HOST</span></h1>
+    </div>
+    <div class="status"><i></i> SYSTEM READY</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">EVENT CONTROL CENTER</p>
+        <h2>Intelligent <span>Event Host</span></h2>
+        <p>Control announcements, agenda flow and voice playback from one screen.</p>
+        <div class="hero-actions">
+          <button id="startHost" class="primary">▶ START AI HOST</button>
+          <button id="stopHost" class="secondary">■ STOP</button>
+        </div>
+      </div>
+      <div class="host-orb">
+        <div class="orb-ring"></div>
+        <div class="orb-core">AI</div>
+        <span>VOICE<br>HOST</span>
+      </div>
+    </section>
+
+    <section class="control-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">LIVE CONTROL</p>
+          <h3 id="currentTitle">Select an agenda item</h3>
+        </div>
+        <div class="live-time" id="clock">--:--:--</div>
+      </div>
+
+      <div class="control-grid">
+        <div>
+          <label for="language">Language</label>
+          <select id="language">
+            <option value="en-IN">English (India)</option>
+            <option value="ta-IN">Tamil</option>
+            <option value="hi-IN">Hindi</option>
+          </select>
+        </div>
+        <div>
+          <label for="voice">Voice</label>
+          <select id="voice"></select>
+        </div>
+        <div>
+          <label for="rate">Speech Rate <span id="rateValue">1.0</span></label>
+          <input id="rate" type="range" min="0.6" max="1.4" value="1" step="0.1">
+        </div>
+        <div>
+          <label for="pitch">Pitch <span id="pitchValue">1.0</span></label>
+          <input id="pitch" type="range" min="0.5" max="1.5" value="1" step="0.1">
+        </div>
+      </div>
+
+      <div class="script-box">
+        <label for="script">AI Host Announcement</label>
+        <textarea id="script" placeholder="Select an agenda item to load its announcement..."></textarea>
+        <div class="script-actions">
+          <button id="speak" class="primary">🔊 SPEAK</button>
+          <button id="pause" class="secondary">Ⅱ PAUSE</button>
+          <button id="resume" class="secondary">▶ RESUME</button>
+          <button id="clear" class="secondary">CLEAR</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="agenda-section">
+      <div class="section-head"><div><p class="eyebrow">EVENT CONTROL</p><h3>AI Host Agenda</h3></div><span id="agendaCount">12 EVENTS</span></div>
+      <div class="agenda-layout">
+        <aside class="agenda-sidebar"><div class="sidebar-title">AGENDA</div><div id="agenda" class="agenda"></div></aside>
+        <div class="agenda-content">
+          <div class="content-top"><div><p class="eyebrow">SELECTED EVENT</p><h3 id="contentTitle">Choose an event</h3></div><div id="contentTime" class="content-time">--:--</div></div>
+          <div class="event-preview"><div id="contentIcon" class="event-icon">🤖</div><div><p class="eyebrow">AI HOST SCRIPT</p><h4 id="contentSubtitle">Ready for your announcement</h4><p id="contentText">Select an agenda button from the left to view its event details and announcement.</p></div></div>
+          <div class="content-actions"><button id="contentSpeak" class="primary">🔊 SPEAK THIS EVENT</button><button id="contentEdit" class="secondary">✎ EDIT SCRIPT</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>AI HOST • RVCE CSE • Event Automation Prototype</footer>
+  <script src="script.js"></script>
+</body>
+</html>
